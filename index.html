@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STOPWATCH</title>
+    <style>
+        body {
+            background-color: rgb(14, 38, 46);
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            position: relative;
+        }
+        .container {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius:10px;
+            padding:20px;
+        }
+        h1 {
+            margin: 0.5em 0;
+        }
+        .col button {
+            background-color: #f0ad4e;
+            border: none;
+            color: white;
+            padding: 1em 2em;
+            margin: 0.5em;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .col button:hover {
+            background-color: #e0880c;
+        }
+        .image-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 1000px;
+            height: 600px;
+            z-index: 1;
+            transform: translate(-50%, -50%);
+            overflow: hidden;
+        }
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: fit;
+            opacity: 0.6; 
+        }
+    </style>
+</head>
+<body>
+    <div class="image-container">
+        <img src="images/waiting.webp" alt="Waiting Image">
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="text-center">
+                <h1>Stopwatch</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-times">
+                <h1><span id="hr"> 00 </span>:<span id="min"> 00 </span>:<span id="sec"> 00 </span>:<span id="cnt"> 00</span></h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button type="button" id="start">Start</button>
+                <button type="button" id="stop">Stop</button>
+                <button type="button" id="reset">Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
